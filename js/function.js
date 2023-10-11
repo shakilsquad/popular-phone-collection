@@ -7,7 +7,7 @@ const loadPhon = async (searchText, isShowAll) =>{
 }
 
 const displayPhons = (phones , isShowAll) =>{
-      console.log(phones ,isShowAll)
+      // console.log(phones ,isShowAll)
       // 1 div name
       const phonContainer = document.getElementById('phon_container')
       // clear phonContainer card before adding card
@@ -42,7 +42,7 @@ const displayPhons = (phones , isShowAll) =>{
                   <h2 class="card-title">${phon.phone_name}</h2>
                   <p>If a dog chews shoes whose shoes does he choose?</p>
                   <div class="card-actions">
-                  <button class="btn btn-primary">Show Details</button>
+                  <button onclick="handelShowDetails('${phon.slug}');show_the_my_modal.showModal()" class="btn btn-primary">Show Details</button>
                   </div>
             </div>
             `
@@ -51,8 +51,38 @@ const displayPhons = (phones , isShowAll) =>{
       });
       // hide loading_spinner
       toggleLoadingSpinner(false)
-
 }
+// handel - show Details
+const handelShowDetails =  async (id) =>{
+      console.log('click details',id)
+      // lode single phon  data 
+      const rec = await fetch(`https://openapi.programming-hero.com/api/phone/${id}`)
+      const data = await rec.json();
+      // console.log(data.data)
+      const phone = data.data;
+      showPhoneDetails(phone)
+}
+const showPhoneDetails = (phone) =>{
+      console.log(phone)
+      const showModalPhoneName = document.getElementById('show_modal_phon_name');
+      showModalPhoneName.innerText = phone.name;
+
+      const showModalContainer = document.getElementById('show_modal_container');
+      showModalContainer.innerHTML = `
+      <img src="${phone.image}" alt="">
+      <h2 class="text-xl"><span>Name:</span>${phone.name}</h2>
+      <p><span>Storage:</span>${phone?.mainFeatures?.storage}</p>
+      
+
+      `
+
+
+      // show the modal
+      show_the_my_modal.showModal()
+      
+}
+
+
 // handel search
 const handelSearch = (isShowAll) =>{
       toggleLoadingSpinner(true);

@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
-      <html data-theme="emerald"></html>
+      <html data-theme="emerald">
+
+      </html>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>phon hunter</title>
@@ -17,7 +19,8 @@
       <main class="container mx-auto">
             <section>
                   <div id="" class="bg-black my-9 p-5 flex justify-center items-center gap-5">
-                        <input id="search_filed" type="text" placeholder="search phon..." class="input input-bordered w-full max-w-xs" />
+                        <input id="search_filed" type="text" placeholder="search phon..."
+                              class="input input-bordered w-full max-w-xs" />
                         <button onclick="handelSearch()" class="btn btn-primary">search</button>
                   </div>
             </section>
@@ -28,15 +31,31 @@
                   </div>
                   <!-- main section  -->
                   <div id="phon_container" class="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                        
+
                   </div>
-                        <!--  show all buttons -->
+                  <!--  show all buttons -->
                   <div id="show_all_container" class="hidden my-9 p-5  bg-black items-center">
                         <div class="flex justify-center items-center">
                               <button onclick="handelShowAll()" class="btn btn-success">show all</button>
                         </div>
-                  </div>      
-                  
+                  </div>
+                  <!-- open modal -->
+                  <!-- Open the modal using ID.showModal() method -->
+                  <dialog id="show_the_my_modal" class="modal modal-bottom sm:modal-middle">
+                        <div class="modal-box ">
+                              <div  class="items-center" id="show_modal_container">
+                              </div>
+                              <h3 id="show_modal_phon_name" class="font-bold text-2xl"></h3>
+
+                              <div class="modal-action flex justify-center items-center">
+                                    <form method="dialog">
+                                          <!-- if there is a button in form, it will close the modal -->
+                                          <button class="btn">Close</button>
+                                    </form>
+                              </div>
+                        </div>
+                  </dialog>
+
             </section>
       </main>
       <footer>
