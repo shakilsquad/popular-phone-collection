@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <html data-theme="emerald"></html>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>phon hunter</title>
+      <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.2/dist/full.css" rel="stylesheet" type="text/css" />
+      <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+      <header>
+            <h1> </h1>
+      </header>
+      <main class="container mx-auto">
+            <section>
+                  <div id="" class="bg-black my-9 p-5 flex justify-center items-center gap-5">
+                        <input id="search_filed" type="text" placeholder="search phon..." class="input input-bordered w-full max-w-xs" />
+                        <button onclick="handelSearch()" class="btn btn-primary">search</button>
+                  </div>
+            </section>
+            <section class="container mx-auto px-2 my-10">
+                  <!-- loading spinner  -->
+                  <div id="loading_spinner" class="text-center my-10 hidden">
+                        <span class="loading loading-spinner loading-lg"></span>
+                  </div>
+                  <!-- main section  -->
+                  <div id="phon_container" class="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                        
+                  </div>
+                        <!--  show all buttons -->
+                  <div id="show_all_container" class="hidden my-9 p-5  bg-black items-center">
+                        <div class="flex justify-center items-center">
+                              <button onclick="handelShowAll()" class="btn btn-success">show all</button>
+                        </div>
+                  </div>      
+                  
+            </section>
+      </main>
+      <footer>
+
+      </footer>
+      <!-- <script src="/js.js"></script> -->
+      <script src="./js//function.js"></script>
+</body>
+
+</html>
