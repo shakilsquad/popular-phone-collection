@@ -39,8 +39,9 @@ const displayPhons = (phones , isShowAll) =>{
                   <img src="${phon.image}" alt="Shoes" class="rounded-xl" />
             </figure>
             <div class="card-body items-center text-center">
-                  <h2 class="card-title">${phon.phone_name}</h2>
-                  <p>If a dog chews shoes whose shoes does he choose?</p>
+                  <h2 class="card-title text-2xl text-black font-extrabold">${phon.phone_name}</h2>
+                  <p>There are many variations of passages of available, but the majority have suffered</p>
+                  <p class="text-2xl font-extrabold">$999</p>
                   <div class="card-actions">
                   <button onclick="handelShowDetails('${phon.slug}');show_the_my_modal.showModal()" class="btn btn-primary">Show Details</button>
                   </div>
@@ -68,10 +69,17 @@ const showPhoneDetails = (phone) =>{
       showModalPhoneName.innerText = phone.name;
 
       const showModalContainer = document.getElementById('show_modal_container');
+
       showModalContainer.innerHTML = `
       <img src="${phone.image}" alt="">
-      <h2 class="text-xl"><span>Name:</span>${phone.name}</h2>
-      <p><span>Storage:</span>${phone?.mainFeatures?.storage}</p>
+      <h2 class="font-bold py-3 text-2xl">${showModalPhoneName.innerText = phone.name}</h2>
+      <p class="text-lg"><span class="text-black  font-bold" >Storage: </span>${phone?.mainFeatures?.storage}</p>
+      <p class="text-lg"><span class="text-black  font-bold" >Display Size: </span>${phone?.mainFeatures?.displaySize}</p>
+      <p class="text-lg"><span class="text-black  font-bold" >ChipSet: </span>${phone?.mainFeatures?.chipSet}</p>
+      <p class="text-lg"><span class="text-black  font-bold" >Slug: </span>${phone.slug}</p>
+      <p class="text-lg"><span class="text-black  font-bold" >Release data: </span>${phone.releaseDate}</p>
+      <p class="text-lg"><span class="text-black  font-bold" >Brand: </span> ${phone.brand}</p>
+      <p class="text-lg"><span class="text-black  font-bold" >GPS: </span> ${phone.others.GPS}</p>
       
 
       `
